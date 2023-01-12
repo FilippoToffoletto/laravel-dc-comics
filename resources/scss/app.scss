@@ -1,1 +1,28 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+
+body{
+    background-image: url('../img/footer-bg.jpg');
+    background-size: cover;
+    height: 100vh;
+}
+
+h1{
+    color: #0E6EFD;
+}
+
+h2,
+h3,
+p,
+span{
+  color: white;
+}
+
+thead{
+    th{
+        color: #0E6EFD;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+    }
+}
+

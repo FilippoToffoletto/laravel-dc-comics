@@ -56,17 +56,6 @@ class ComicController extends Controller
 
         return redirect(route('comics.show', $new_item));
 
-        /*
-
-        $new_comic = new Comic();
-        $new_comic->title= $form_data['title'];
-        $new_comic->slug= Comic::generateSlug($new_comic->title);
-        $new_comic->thumb= $form_data['thumb'];
-        $new_comic->description= $form_data['description'];
-        $new_comic->save();
-
-        return redirect()->route('comics.show', $new_comic);
-        */
     }
 
     /**
@@ -115,5 +104,8 @@ class ComicController extends Controller
     public function destroy($id)
     {
         //
+        $comics = Comic::find($id);
+        $comics->destroy();
+        return redirect('home');
     }
 }
