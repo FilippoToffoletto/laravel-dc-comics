@@ -20,7 +20,11 @@
                     <td>{{$comic->id}}</td>
                     <td>{{$comic->title}}</td>
                     <td>{{$comic->type}}</td>
-                    <td><a href="{{route('comics.show', $comic)}}" class="btn btn-primary" title="show"><i class="fa-solid fa-eye"></i></a></td>
+                    <td>
+                        <a href="{{route('comics.show', $comic)}}" class="btn btn-primary" title="Show"><i class="fa-solid fa-eye"></i></a>
+                        <a href="#" class="btn btn-warning" title="Edit"><i class="fa-solid fa-pencil"></i></a>
+                        <a href="#" class="btn btn-danger" title="Delete"><i class="fa-solid fa-trash"></i></a>
+                    </td>
                   </tr>
                 @empty
                   <h2>Nessun prodotto</h2>
