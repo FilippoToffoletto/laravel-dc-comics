@@ -20,7 +20,7 @@
                     <td>{{$comic->id}}</td>
                     <td>{{$comic->title}}</td>
                     <td>{{$comic->type}}</td>
-                    <td>xxxx</td>
+                    <td><a href="{{route('comics.show', $comic)}}" class="btn btn-primary" title="show"><i class="fa-solid fa-eye"></i></a></td>
                   </tr>
                 @empty
                   <h2>Nessun prodotto</h2>
@@ -28,6 +28,8 @@
 
             </tbody>
           </table>
+
+          {{$comics->links()}}
     </div>
 
 @endsection
