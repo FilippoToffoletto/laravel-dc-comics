@@ -6,10 +6,10 @@
         <div class="row">
             <div class="col-8">
                 <h1 class="py-2">{{$comic->title}}</h1>
-                <span class="fs-3 text-capitalize d-block py-1">Type:{!!$comic->type!!}</span>
-                <span class="fs-3 text-capitalize d-block py-1">Series:{!!$comic->series!!}</span>
-                <span class="fs-3 text-capitalize d-block py-1">Sale Date:{!!$comic->sale_date!!}</span>
-                <span class="fs-3 text-capitalize d-block py-1">${!!$comic->price!!}</span>
+                <span class="fs-4 text-capitalize d-block py-1">Type: <strong>{!!$comic->type!!}</strong></span>
+                <span class="fs-4 text-capitalize d-block py-1">Series: <strong>{!!$comic->series!!}</strong></span>
+                <span class="fs-4 text-capitalize d-block py-1">Sale Date: <strong>{!!$comic->sale_date!!}</strong></span>
+                <span class="fs-4 text-capitalize d-block py-1">Price: <strong>${!!$comic->price!!}</strong></span>
                 <p class="me-4 text-justify mt-3">{!!$comic->description!!}</p>
 
 
