@@ -13,12 +13,13 @@
             </div>
             <div class="mb-3">
                 <label for="thumb" class="form-label">Immagine</label>
-                <input type="thumb" class="form-control" id="thumb" name="title" placeholder="inserire la URL dell'immagine">
+                <input type="thumb" class="form-control" id="thumb" name="thumb" placeholder="inserire la URL dell'immagine">
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Descrizione</label>
                 <textarea class="form-control" id="description" name="description" rows="3"></textarea>
             </div>
+            <button type="submit" class="btn btn-success py-4">Create</button>
         </form>
     </div>
 

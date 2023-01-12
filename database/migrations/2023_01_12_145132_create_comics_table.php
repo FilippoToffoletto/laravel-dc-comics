@@ -18,11 +18,11 @@ return new class extends Migration
             $table->string('title', 1000);
             $table->string('slug', 100)->unique();
             $table->text('description')->nullable();
-            $table->string('thumb')->nullable();
-            $table->string('price', 20);
+            $table->text('thumb')->nullable();
+            $table->string('price', 20)->nullable();
             $table->string('series', 50)->nullable();
             $table->string('sale_date', 30)->nullable();
-            $table->string('type', 50);
+            $table->string('type', 50)->nullable();
             $table->timestamps();
         });
     }

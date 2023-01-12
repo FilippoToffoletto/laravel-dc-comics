@@ -6,7 +6,7 @@
         </a>
     </div>
     <div class="container mt-5">
-        <a href="{{route('comics.create')}}" class="btn btn-info">Add a Comic</a>
+        <a href="{{route('comics.create')}}" class="btn btn-primary">Add a Comic</a>
     </div>
 
 </header>
