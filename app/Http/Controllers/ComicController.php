@@ -43,6 +43,7 @@ class ComicController extends Controller
 
         //dd($form_input);
         $new_item = new Comic();
+        /*
         $new_item->title = $form_input['title'];
         $new_item->slug = Comic::generateSlug($new_item->title);
         $new_item->description = $form_input['description'];
@@ -51,6 +52,10 @@ class ComicController extends Controller
         $new_item->series = $form_input['series'];
         $new_item->sale_date = $form_input['sale_date'];
         $new_item->type = $form_input['type'];
+        */
+        $form_input['slug'] = Comic::generateSlug($form_input['title']);
+        //con fill vengono associate le chiavi presenti in fillable model
+        $new_item -> fill($form_input);
 
         $new_item->save();
 
@@ -78,9 +83,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comic $comic)
     {
-        //
+        return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -90,9 +95,18 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $form_input = $request->all();
+
+        if($form_input['title'] != $comic->title){
+            $form_input['slug'] = Comic::generateSlug($form_input['title']);
+        }else{
+            $form_input['slug'] = $comic->slug;
+        }
+        $comic->update($form_input);
+
+        return redirect()->route('comics.show', $comic);
     }
 
     /**
