@@ -23,7 +23,15 @@
                     <td>
                         <a href="{{route('comics.show', $comic)}}" class="btn btn-primary" title="Show"><i class="fa-solid fa-eye"></i></a>
                         <a href="{{route('comics.edit', $comic)}}" class="btn btn-warning" title="Edit"><i class="fa-solid fa-pencil"></i></a>
-                        <a href="{{route('comics.destroy', $comic)}}" class="btn btn-danger" title="Delete"><i class="fa-solid fa-trash"></i></a>
+                        {{-- PER IL DELETE SERVE IL FORM --}}
+                        <form action="{{route('comics.destroy', $comic)}}" method='POST' class="d-inline" onsubmit="return confirm('Confermi l\'eleminazione di: {{$comic->title}}')">
+                            @csrf
+                            @method('DELETE')
+
+                            <button class="btn btn-danger" title="Delete" type="submit"><i class="fa-solid fa-trash"></i></button>
+                        </form>
+
+
                     </td>
                   </tr>
                 @empty
